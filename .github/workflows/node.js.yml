@@ -23,8 +23,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: yarn build --if-present
+    - name: Installing packages
+      run: yarn
+    - name: Building the application
+      run: yarn build --if-present
     - id: build-publish
       uses: bitovi/github-actions-react-to-ghp@v1.2.0
       with:
