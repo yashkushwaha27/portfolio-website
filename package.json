@@ -2,7 +2,7 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "https://yashkushwaha27.github.io/portfolio-website",
+  "homepage": "https://yashkushwaha27.github.io/portfolio",
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.js",
