@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Global, css } from '@emotion/react';
 import Main from './Main';
 import Header from '@components/header';
@@ -6,7 +6,7 @@ import { homeBackground } from '@assets/images';
 import { PoppinsFonts } from '@theme/fontsFamily';
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Global
       styles={[
         css`
@@ -29,7 +29,7 @@ const App = () => (
     />
     <Header />
     <Main />
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;

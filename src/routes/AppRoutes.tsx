@@ -11,7 +11,6 @@ const routes = [
   { path: ROUTES.HOME, element: <Home /> },
   { path: ROUTES.CONTACT_ME, element: <ContactMe /> },
   { path: ROUTES.EXPERIENCE, element: <Experience /> },
-  { path: '*', element: <Home /> },
 ];
 
 /**
