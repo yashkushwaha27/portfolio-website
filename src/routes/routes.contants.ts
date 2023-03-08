@@ -2,7 +2,7 @@
  * Application routes constants
  */
 export const ROUTES = {
-  HOME: '/',
-  CONTACT_ME: '/contactMe',
-  EXPERIENCE: '/experience',
+  HOME: '/portfolio-website',
+  CONTACT_ME: '/portfolio-website/contactMe',
+  EXPERIENCE: '/portfolio-website/experience',
 };
