@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { homeBackground2 } from '@assets/images';
 import { useBreakpoints } from '@hooks/useBreakPoints';
 import { zIndex } from '@theme/zIndex';
 import { colors } from '@theme/colors';
+import { fontSizeMobile, fontSizeWeb, fontWeight } from '@theme/fonts';
 
 export const useStyles = () => {
   const { isMobile } = useBreakpoints();
@@ -33,22 +33,22 @@ export const useStyles = () => {
           color: colors.white,
         },
         hcNameText: {
-          fontSize: isMobile ? 25 : 50,
-          fontWeight: 900,
+          fontSize: isMobile ? fontSizeMobile.heading : fontSizeWeb.heading,
+          fontWeight: fontWeight.bold,
         },
         hcSKillsText: {
-          fontSize: isMobile ? 18 : 36,
-          fontWeight: 500,
+          fontSize: isMobile ? fontSizeMobile.subLabel : fontSizeWeb.subLabel,
+          fontWeight: fontWeight.medium,
           textAlign: 'center',
           color: colors.tan,
         },
         hcDescriptionText: {
-          fontSize: isMobile ? 12 : 24,
-          fontWeight: 500,
+          fontSize: isMobile ? fontSizeMobile.paragraph : fontSizeWeb.paragraph,
+          fontWeight: fontWeight.medium,
           textAlign: 'center',
           color: colors.tomato,
         },
       } as const),
-    [homeBackground2, isMobile]
+    [isMobile]
   );
 };

@@ -20,7 +20,6 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'plugin:jsx-a11y/recommended',
     'plugin:eslint-comments/recommended',
     'eslint-config-prettier',
     'plugin:prettier/recommended',
@@ -38,6 +37,6 @@ module.exports = {
     'jsx-a11y/no-autofocus': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
-    "react/no-unknown-property": ["error", { "ignore": ["css"] }]
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },
 };

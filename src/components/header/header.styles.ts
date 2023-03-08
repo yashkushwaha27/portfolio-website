@@ -1,5 +1,6 @@
 import { useBreakpoints } from '@hooks/useBreakPoints';
 import { colors } from '@theme/colors';
+import { fontSizeMobile, fontSizeWeb, fontWeight } from '@theme/fonts';
 import { useMemo } from 'react';
 
 export const useStyles = () => {
@@ -14,12 +15,13 @@ export const useStyles = () => {
           top: 0,
           right: 0,
           left: 0,
-          background: 'rgba(0,0,0,0.75)',
+          background: 'rgba(0,0,0,0.2)',
           height: isMobile ? 50 : 75,
           width: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          boxShadow: '0 15px 10px -15px #000000',
         },
         headerMenuIcom: {
           height: '100%',
@@ -27,8 +29,8 @@ export const useStyles = () => {
         },
         headerText: {
           color: colors.white,
-          fontSize: isMobile ? 20 : 32,
-          fontWeight: 600,
+          fontSize: isMobile ? fontSizeMobile.subLabel : fontSizeWeb.subLabel,
+          fontWeight: fontWeight.semiBold,
           marginLeft: 32,
           cursor: 'pointer',
         },
