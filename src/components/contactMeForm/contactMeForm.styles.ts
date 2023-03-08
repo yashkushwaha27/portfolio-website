@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useBreakpoints } from '@hooks/useBreakPoints';
 import { colors } from '@theme/colors';
+import { fontSizeMobile, fontSizeWeb, fontWeight } from '@theme/fonts';
 
 export const useStyles = () => {
   const { isMobile } = useBreakpoints();
@@ -18,8 +19,13 @@ export const useStyles = () => {
         },
         cmfHeading: {
           color: colors.tan,
-          fontSize: isMobile ? 22 : 44,
-          fontWeight: 700,
+          fontSize: isMobile ? fontSizeMobile.heading : fontSizeWeb.heading,
+          fontWeight: fontWeight.bold,
+        },
+        cmfImgWrapper: {
+          background: colors.tan,
+          borderRadius: '50%',
+          boxShadow: `0px 0px 40px ${colors.tan}`,
         },
         cmfImage: {
           borderRadius: '50%',
@@ -32,6 +38,7 @@ export const useStyles = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          paddingTop: 16,
         },
         cmfDetailsWrapper: {
           display: 'flex',
@@ -39,7 +46,7 @@ export const useStyles = () => {
           justifyContent: 'space-between',
           flexWrap: 'wrap',
           paddingTop: 28,
-          width: isMobile ? '70%' : '100%',
+          width: isMobile ? '80%' : '100%',
         },
         cmfInfoWrapper: {
           marginRight: 16,
@@ -55,7 +62,7 @@ export const useStyles = () => {
           background: colors.tomato,
           color: colors.white,
           textTransform: 'capitalize',
-          width: isMobile ? '70%' : '100%',
+          width: isMobile ? '80%' : '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

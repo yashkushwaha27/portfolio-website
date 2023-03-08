@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useBreakpoints } from '@hooks/useBreakPoints';
 import { colors } from '@theme/colors';
+import { fontSizeMobile, fontSizeWeb } from '@theme/fonts';
 
 export const useStyles = () => {
   const { isMobile } = useBreakpoints();
@@ -13,7 +14,7 @@ export const useStyles = () => {
           padding: `${isMobile ? 20 : 28}px 12px 12px`,
           border: `2px solid ${colors.tan}`,
           borderRadius: 8,
-          fontSize: isMobile ? 12 : 24,
+          fontSize: isMobile ? fontSizeMobile.paragraph : fontSizeWeb.paragraph,
           position: 'relative',
         },
         ibClickable: {
@@ -22,9 +23,11 @@ export const useStyles = () => {
         ibPlaceholder: {
           opacity: 1,
           color: colors.tan,
-          fontSize: isMobile ? 10 : 16,
+          fontSize: isMobile
+            ? fontSizeMobile.placeholder
+            : fontSizeWeb.placeholder,
           position: 'absolute',
-          top: isMobile ? -8 : -16,
+          top: isMobile ? -5 : -10,
           left: 15,
         },
       } as const),

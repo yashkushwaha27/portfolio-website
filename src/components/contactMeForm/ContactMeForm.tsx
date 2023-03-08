@@ -58,7 +58,9 @@ const ContactMeForm = () => {
   return (
     <div css={styles.cmfWrapper}>
       <h1 css={styles.cmfHeading}>{content.contactMe_heading_text}</h1>
-      <img css={styles.cmfImage} src={contactMePicture} />
+      <div css={styles.cmfImgWrapper}>
+        <img css={styles.cmfImage} src={contactMePicture} />
+      </div>
       <div css={styles.cmfDetailsContainer}>
         {isMobile ? detailsMobile : details}
         <div
