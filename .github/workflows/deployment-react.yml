@@ -27,7 +27,6 @@ jobs:
       - name: Building the application
         run: yarn build
       - name: Deploy to GitHub pages
-        uses: akhileshns/heroku-deploy@v3.12.12
         run: |
           git config --global user.name "yashkushwaha27"
           git config --global user.email "yashkkushwaha@gmail.com"
