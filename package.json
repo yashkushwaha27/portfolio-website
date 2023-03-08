@@ -8,7 +8,7 @@
     "build": "webpack --config webpack/webpack.prod.js",
     "start": "webpack serve --config webpack/webpack.dev.js",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
