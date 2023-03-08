@@ -26,7 +26,7 @@ jobs:
     - name: Installing packages
       run: yarn
     - name: Building the application
-      run: yarn build --if-present
+      run: yarn build
     - id: build-publish
       uses: bitovi/github-actions-react-to-ghp@v1.2.0
       with:
