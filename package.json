@@ -5,6 +5,9 @@
   "homepage": "https://yashkushwaha27.github.io/portfolio",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "clean-build": "node ./scripts/cleanBuild.js",
+    "prebuild": "yarn clean-build && yarn format && yarn lint",
     "build": "webpack --config webpack/webpack.prod.js",
     "start": "webpack serve --config webpack/webpack.dev.js",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
