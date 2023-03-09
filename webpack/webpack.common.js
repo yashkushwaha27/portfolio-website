@@ -1,6 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 
 const absoluteFolders = [
   'assets',
@@ -64,17 +62,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
-      base: {
-        href: 'http://localhost:1000',
-        target: '_blank',
-      },
-    }),
-    new webpack.ProvidePlugin({
-      React: 'react',
-    }),
-  ],
 };
