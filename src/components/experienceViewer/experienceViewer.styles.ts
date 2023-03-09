@@ -22,7 +22,7 @@ export const useStyles = () => {
           borderRight: `3px solid ${colors.tan}`,
           width: '0px',
           height: 20,
-          margin: isMobile ? '0 20 0 auto' : '0 auto',
+          margin: '0 auto',
         },
         evBodyWrapper: {
           height: '85vh',

@@ -30,7 +30,7 @@ const ExperienceInfo = ({ data, sectionToRender }: IExperienceInfo) => {
           <text css={styles.eiDataCompany}>{company}</text>
           <text css={styles.eiDataDescription}>{desctiption}</text>
         </div>
-        {(sectionToRender === 'left' || isMobile) && (
+        {sectionToRender === 'left' && !isMobile && (
           <div css={styles.eiArrowIcons}>
             <FaCaretRight size={60} />
           </div>

@@ -77,7 +77,7 @@ const Drawer = ({ onClose, open }: IDrawer) => {
               customStyles={styles.drawerListItem}
               key={`${item.bodyText}`}
             />
-            {DRAWER_CONTENT.length !== index - 1 && (
+            {DRAWER_CONTENT.length - 1 !== index && (
               <div css={styles.drawerSeparator} />
             )}
           </>

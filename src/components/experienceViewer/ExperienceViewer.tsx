@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { content } from '@constants/content';
 import { useStyles } from './experienceViewer.styles';
 import { ExperienceInfo } from '@components/common';
+import { useBreakpoints } from '@hooks/useBreakPoints';
 
 const WORK_EXPERIENCE: IWorkExperience[] = [
   {
@@ -22,21 +23,27 @@ const WORK_EXPERIENCE: IWorkExperience[] = [
 
 const ExperienceViewer = () => {
   const styles = useStyles();
+  const { isMobile } = useBreakpoints();
 
   const bodyToRender = useMemo(() => {
     return (
       <div css={styles.evBodyWrapper}>
         <div css={styles.evVerticalLine} />
         {WORK_EXPERIENCE.map((item: IWorkExperience, index: number) => (
-          <ExperienceInfo
-            key={item.timePeriod}
-            data={item}
-            sectionToRender={index % 2 === 0 ? 'left' : 'right'}
-          />
+          <>
+            <ExperienceInfo
+              key={item.timePeriod}
+              data={item}
+              sectionToRender={index % 2 === 0 ? 'left' : 'right'}
+            />
+            {index !== WORK_EXPERIENCE.length - 1 && isMobile && (
+              <div css={styles.evVerticalLine} />
+            )}
+          </>
         ))}
       </div>
     );
-  }, [styles]);
+  }, [styles, isMobile]);
 
   return (
     <div css={styles.evWrapper}>

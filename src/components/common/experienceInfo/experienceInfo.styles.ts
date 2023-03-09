@@ -32,6 +32,7 @@ export const useStyles = (sectionToRender: 'left' | 'right') => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+          alignItems: isMobile ? 'baseline' : '',
         },
         eiHeaderWrapper: {
           width: isMobile
@@ -48,7 +49,7 @@ export const useStyles = (sectionToRender: 'left' | 'right') => {
           background: colors.tomato,
           color: colors.white,
           margin: 'auto',
-          borderRight: isMobile ? `3px solid ${colors.tan}` : '',
+          borderTop: isMobile ? `3px solid ${colors.tan}` : '',
           borderBottom: `3px solid ${colors.tan}`,
         },
         eiBodyWrapper: {
@@ -65,13 +66,13 @@ export const useStyles = (sectionToRender: 'left' | 'right') => {
           width: isMobile
             ? 'calc(100vw - 20px)'
             : `calc(50vw - ${broswerAgent === 'firefox' ? 0 : 10}px)`,
-          padding: '20px 0',
+          padding: isMobile ? 0 : '20px 0',
         },
         eiLeftSection: {
-          borderRight: `3px solid ${colors.tan}`,
+          borderRight: isMobile ? '' : `3px solid ${colors.tan}`,
         },
         eiRightSection: {
-          [`border${isMobile ? 'Right' : 'Left'}`]: `3px solid ${colors.tan}`,
+          borderLeft: isMobile ? '' : `3px solid ${colors.tan}`,
         },
         eiDataContainer: {
           display: 'flex',
