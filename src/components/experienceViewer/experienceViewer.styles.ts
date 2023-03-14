@@ -25,7 +25,7 @@ export const useStyles = () => {
           margin: '0 auto',
         },
         evBodyWrapper: {
-          height: '85vh',
+          height: isMobile ? '70vh' : '85vh',
           overflowY: 'scroll',
           '::-webkit-scrollbar': {
             '-webkit-appearance': 'none',
