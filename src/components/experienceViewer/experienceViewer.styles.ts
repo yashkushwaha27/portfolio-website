@@ -35,6 +35,19 @@ export const useStyles = () => {
           },
           'scrollbar-width': 'none', // for mozilla
         },
+        evHourGlassWrapper: {
+          padding: 16,
+          borderRadius: '50%',
+          border: `1px solid ${colors.tan}`,
+          width: 'fit-content',
+          margin: '8px auto',
+        },
+        evHourGlassColor: colors.tan,
+        evHourGlassSize: isMobile ? 20 : 28,
+        evFragments: {
+          color: colors.tan,
+          fontSize: isMobile ? 20 : 28,
+        },
       } as const),
     [isMobile]
   );

@@ -5,14 +5,18 @@ import {
   FaInstagram,
   FaGithub,
   FaIdCard,
-  FaIdBadge,
+  // FaIdBadge,
   FaHome,
+  FaCodeBranch,
+  // FaCode,
+  // FaRegLightbulb,
 } from 'react-icons/fa';
 import { judgementFreeZone } from '@assets/images';
 import { useStyles } from './drawer.styles';
 import { ListItem } from '@components/common';
 import { content } from '@constants/content';
 import { ROUTES } from '@routes/routes.contants';
+import { keyCodes } from '@constants/keyCodes';
 
 const Drawer = ({ onClose, open }: IDrawer) => {
   const styles = useStyles();
@@ -30,9 +34,19 @@ const Drawer = ({ onClose, open }: IDrawer) => {
         bodyText: content.listItem_home_text,
         onClick: () => navigate(ROUTES.HOME),
       },
+      // {
+      //   leftSection: (
+      //     <FaIdBadge
+      //       size={styles.drawerListItemIconSize}
+      //       color={styles.drawerListItemIconColor}
+      //     />
+      //   ),
+      //   bodyText: content.listItem_resume_text,
+      //   onClick: () => navigate('#'),
+      // },
       {
         leftSection: (
-          <FaIdBadge
+          <FaCodeBranch
             size={styles.drawerListItemIconSize}
             color={styles.drawerListItemIconColor}
           />
@@ -40,6 +54,26 @@ const Drawer = ({ onClose, open }: IDrawer) => {
         bodyText: content.listItem_experience_text,
         onClick: () => navigate(ROUTES.EXPERIENCE),
       },
+      // {
+      //   leftSection: (
+      //     <FaCode
+      //       size={styles.drawerListItemIconSize}
+      //       color={styles.drawerListItemIconColor}
+      //     />
+      //   ),
+      //   bodyText: content.listItem_skills_text,
+      //   onClick: () => navigate('#'),
+      // },
+      // {
+      //   leftSection: (
+      //     <FaRegLightbulb
+      //       size={styles.drawerListItemIconSize}
+      //       color={styles.drawerListItemIconColor}
+      //     />
+      //   ),
+      //   bodyText: content.listItem_hobbies_text,
+      //   onClick: () => navigate('#'),
+      // },
       {
         leftSection: (
           <FaIdCard
@@ -87,22 +121,55 @@ const Drawer = ({ onClose, open }: IDrawer) => {
   }, [styles, onClose, DRAWER_CONTENT]);
 
   const drawerFooter = useMemo(() => {
+    /**
+     * Method to handle linkedIn icon click
+     */
+    const onLinkedInClickHandler = () =>
+      window.open(content.drawer_linkedInLink, '__blank');
+
+    /**
+     * Method to handle github icon click
+     */
+    const onGithubClickHandler = () =>
+      window.open(content.drawer_githubLink, '__blank');
+
+    /**
+     * Method to handle instagram icon click
+     */
+    const onInstagramClickHandler = () =>
+      window.open(content.drawer_instagramLink, '__blank');
+
     return (
       <div css={styles.drawerFooter}>
         <FaLinkedin
           size={styles.drawerIconSize}
           style={styles.drawerIcon}
           tabIndex={0}
+          onClick={onLinkedInClickHandler}
+          onKeyDown={(e: any) =>
+            e.keyCode === keyCodes.enter && onLinkedInClickHandler()
+          }
+          role="button"
         />
         <FaGithub
           tabIndex={0}
           size={styles.drawerIconSize}
           style={styles.drawerIcon}
+          onClick={onGithubClickHandler}
+          onKeyDown={(e: any) =>
+            e.keyCode === keyCodes.enter && onGithubClickHandler()
+          }
+          role="button"
         />
         <FaInstagram
           tabIndex={0}
           size={styles.drawerIconSize}
           style={styles.drawerIcon}
+          onClick={onInstagramClickHandler}
+          onKeyDown={(e: any) =>
+            e.keyCode === keyCodes.enter && onInstagramClickHandler()
+          }
+          role="button"
         />
       </div>
     );
