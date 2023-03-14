@@ -18,9 +18,10 @@ export const useStyles = () => {
           justifyContent: 'center',
         },
         cmfHeading: {
-          color: colors.tan,
+          color: colors.tomato,
           fontSize: isMobile ? fontSizeMobile.heading : fontSizeWeb.heading,
           fontWeight: fontWeight.bold,
+          textShadow: `0px 0px 40px ${colors.darkTomato}`,
         },
         cmfImgWrapper: {
           background: colors.tan,
@@ -58,8 +59,8 @@ export const useStyles = () => {
         cmfBtn: {
           padding: '12px 0',
           borderRadius: 12,
-          border: `1px solid ${colors.tomato}`,
-          background: colors.tomato,
+          border: `1px solid ${colors.darkTomato}`,
+          background: colors.darkTomato,
           color: colors.white,
           textTransform: 'capitalize',
           width: isMobile ? '80%' : '100%',
@@ -70,9 +71,8 @@ export const useStyles = () => {
           marginTop: 16,
           cursor: 'pointer',
           '&:hover': {
-            border: `1px solid ${colors.white}`,
-            background: colors.white,
-            color: colors.tomato,
+            border: `1px solid ${colors.tomato}`,
+            background: colors.tomato,
           },
         },
         cmfIcon: {

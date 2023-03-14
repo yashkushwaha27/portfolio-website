@@ -11,7 +11,7 @@ export const useStyles = () => {
   return useMemo(
     () =>
       ({
-        drawerListItemIconColor: colors.black,
+        drawerListItemIconColor: colors.tan,
         drawerIconSize: isMobile ? 24 : 32,
         drawerListItemIconSize: isMobile ? 20 : 28,
         drawerWrapper: {
@@ -19,13 +19,13 @@ export const useStyles = () => {
           transition: TRANSITION,
           position: 'absolute',
           right: 0,
-          background: colors.tan,
+          background: colors.darkTomato,
           zIndex: zIndex.drawer,
           display: 'flex',
           flexDirection: 'column',
         },
         drawerOpen: {
-          width: isMobile ? 175 : 350,
+          width: isMobile ? 250 : 300,
         },
         drawerClosed: {
           width: 0,
@@ -55,6 +55,8 @@ export const useStyles = () => {
         drawerBody: {
           flex: 1,
           padding: `12px 0`,
+          color: colors.tan,
+          margin: 'auto 0',
         },
         drawerFooter: {
           background: colors.black,
@@ -67,12 +69,12 @@ export const useStyles = () => {
         drawerListItem: {
           padding: `12px ${isMobile ? 16 : 32}px`,
           '&:hover': {
-            background: 'rgba(0,0,0,0.05)',
+            background: 'rgba(280,180,140,0.05)',
           },
         },
         drawerSeparator: {
           margin: '0px 32px 8px',
-          borderBottom: '1px solid rgba(0,0,0,0.2)',
+          borderBottom: '1px solid rgba(280,180,140,0.5)',
         },
         drawerIcon: { color: colors.tan, '&:hover': { color: colors.tomato } },
       } as const),

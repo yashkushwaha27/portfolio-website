@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { FaHourglass } from 'react-icons/fa';
 import { content } from '@constants/content';
 import { useStyles } from './experienceViewer.styles';
 import { ExperienceInfo } from '@components/common';
@@ -28,6 +29,7 @@ const ExperienceViewer = () => {
   const bodyToRender = useMemo(() => {
     return (
       <div css={styles.evBodyWrapper}>
+        <text css={styles.evFragments}>{'<>'}</text>
         <div css={styles.evVerticalLine} />
         {WORK_EXPERIENCE.map((item: IWorkExperience, index: number) => (
           <>
@@ -41,6 +43,13 @@ const ExperienceViewer = () => {
             )}
           </>
         ))}
+        <div css={styles.evHourGlassWrapper}>
+          <FaHourglass
+            color={styles.evHourGlassColor}
+            size={styles.evHourGlassSize}
+          />
+        </div>
+        <text css={styles.evFragments}>{'</>'}</text>
       </div>
     );
   }, [styles, isMobile]);

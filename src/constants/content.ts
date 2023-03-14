@@ -7,9 +7,17 @@ export const content = {
     'Achievement-oriented software developer with a good experience of professional work. Tech enthusiast interested in developing intriguing features.',
   skills_text: ['ReactJS', 'NodeJS', 'React Native'],
 
+  drawer_githubLink: 'https://github.com/yashkushwaha27',
+  drawer_instagramLink:
+    'https://instagram.com/_yash.kushwaha_?igshid=YmMyMTA2M2Y=',
+  drawer_linkedInLink: 'https://www.linkedin.com/in/yash-kushwaha-47a52a172/',
+
   listItem_home_text: 'Home',
-  listItem_contactMe_text: 'Contact Me',
-  listItem_experience_text: 'Work Experience',
+  listItem_contactMe_text: 'Details',
+  listItem_experience_text: 'Experience',
+  listItem_resume_text: 'Resume',
+  listItem_skills_text: 'Skills',
+  listItem_hobbies_text: 'Hobbies',
 
   contactMe_heading_text: 'Contact Details',
   contactMe_btnText: 'Contact me on whatsApp',
